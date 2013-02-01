@@ -3,7 +3,7 @@
 <head>
 	<title><?php echo $meta_title; ?></title>
 	<!-- Bootstrap-->
-	<link href="" rel="stylesheet" type="text/css">
+	<link href="<?php echo site_url('css/bootstrap.min.css'); ?>" rel="stylesheet" type="text/css">
 </head>
 <body>
 	<div class="navbar navbar-static-top navbar-inverse">
