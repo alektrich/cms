@@ -9,7 +9,7 @@ class MY_Model extends CI_Model {
 	public $rules = array();
 	protected $_timestamps = FALSE;
 
-	public function __construct() {
+	function __construct() {
 		parent::__construct();
 	}
 
@@ -26,11 +26,11 @@ class MY_Model extends CI_Model {
 			$method = 'result';
 		}
 
-		if (!count($this->db->ar_order_by)) {
+		if (!count($this->db->ar_orderby)) {
 			$this->db->order_by($this->_order_by);
 		}
 		
-		return $this->db->get($this->_table_name)->method();
+		return $this->db->get($this->_table_name)->$method();
 	}
 
 	public function get_by($where, $single = FALSE) {
@@ -63,6 +63,7 @@ class MY_Model extends CI_Model {
 		
 		return $id;
 	}
+
 	public function delete($id){
 		$filter = $this->_primary_filter;
 		$id = $filter($id);

@@ -1,7 +1,9 @@
 <?php
+class Frontend_Controller extends MY_Controller
+{
 
-class Frontend_Controller extends MY_Controller {
-	public function __construct() {
+	function __construct ()
+	{
 		parent::__construct();
 	}
 }
