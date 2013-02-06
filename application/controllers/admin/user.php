@@ -27,7 +27,7 @@ class User extends Admin_Controller {
 
 		//Set up the form
 		$rules = $this->user_m->rules_admin;
-		$id || $rules['password'] .= '|required';
+		$id || $rules['password']['rules'] .= '|required';
 		$this->form_validation->set_rules($rules);
 
 		//Process the form
