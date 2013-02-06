@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Feb 03, 2013 at 07:18 PM
+-- Generation Time: Feb 06, 2013 at 10:24 PM
 -- Server version: 5.5.25a
 -- PHP Version: 5.4.4
 
@@ -41,7 +41,7 @@ CREATE TABLE IF NOT EXISTS `ci_sessions` (
 --
 
 INSERT INTO `ci_sessions` (`session_id`, `ip_address`, `user_agent`, `last_activity`, `user_data`) VALUES
-('3baee9fe7ed5acb8da8612667fcec960', '127.0.0.1', 'Mozilla/5.0 (Windows NT 5.1; rv:18.0) Gecko/20100101 Firefox/18.0', 1359913222, 'a:5:{s:9:"user_data";s:0:"";s:4:"name";s:10:"Aleksandar";s:5:"email";s:19:"alektrich@gmail.com";s:2:"id";s:1:"1";s:8:"loggedin";b:1;}');
+('e204f41fbdf9a96110ef3a6e806ba218', '127.0.0.1', 'Mozilla/5.0 (Windows NT 5.1; rv:18.0) Gecko/20100101 Firefox/18.0', 1360185019, '');
 
 -- --------------------------------------------------------
 
@@ -70,10 +70,18 @@ CREATE TABLE IF NOT EXISTS `pages` (
   `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
   `title` varchar(100) NOT NULL,
   `slug` varchar(100) NOT NULL,
-  `order` int(11) NOT NULL,
+  `order` int(11) NOT NULL DEFAULT '1',
   `body` text NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=3 ;
+
+--
+-- Dumping data for table `pages`
+--
+
+INSERT INTO `pages` (`id`, `title`, `slug`, `order`, `body`) VALUES
+(1, 'Home', 'home', 1, '<p>This is <strong>homepage.</strong></p>'),
+(2, 'O nama', 'about', 1, '<p>Na&scaron;a fima se bavi uvozom i distribucijom cincilatora i vimbrona za gemanzovanje.</p>');
 
 -- --------------------------------------------------------
 
@@ -87,14 +95,16 @@ CREATE TABLE IF NOT EXISTS `users` (
   `password` varchar(128) NOT NULL,
   `name` varchar(100) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=2 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=4 ;
 
 --
 -- Dumping data for table `users`
 --
 
 INSERT INTO `users` (`id`, `email`, `password`, `name`) VALUES
-(1, 'alektrich@gmail.com', '0ad6d3aafb3aae99bab654e6421215a792d6077145771c2561b040212f606a4a352e66f730c76ab9ebd62f0429fdf9af5aef1f2829ae62ad67c07eea6b6c4b41', 'Aleksandar');
+(1, 'alektrich@gmail.com', '0ad6d3aafb3aae99bab654e6421215a792d6077145771c2561b040212f606a4a352e66f730c76ab9ebd62f0429fdf9af5aef1f2829ae62ad67c07eea6b6c4b41', 'Aleksandar'),
+(2, 'milos.boskovic@gmail.com', '54000ecbd0a932c77367277149c4f15ad899dd0dc88528273e3068450f06eac04371f164ae46fd904335a192321c910661ed63cda038d3e65de9095fb90d0b29', 'Bole'),
+(3, 'jelena.fil@hotmail.com', '4f3575abb550a554b898ba63bcfc4f2824d0085ba18351c56fd1f257c4f55083b684abad307f0eab62b9545d80ab007706ad8729f8c471c834b7a15a2b7324cc', 'Jelena');
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
