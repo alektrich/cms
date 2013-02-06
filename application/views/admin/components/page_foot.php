@@ -1,4 +1,4 @@
 <script src="http://code.jquery.com/jquery-latest.js"></script>
-	<script src="http://twitter.github.com/bootstrap/assets/js/bootstrap.js"></script>
+	<script src="<?php echo site_url('js/bootstrap.min.js'); ?>"></script>
 </body>
 </html>
