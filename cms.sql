@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Feb 06, 2013 at 10:24 PM
+-- Generation Time: Feb 07, 2013 at 06:31 PM
 -- Server version: 5.5.25a
 -- PHP Version: 5.4.4
 
@@ -41,7 +41,7 @@ CREATE TABLE IF NOT EXISTS `ci_sessions` (
 --
 
 INSERT INTO `ci_sessions` (`session_id`, `ip_address`, `user_agent`, `last_activity`, `user_data`) VALUES
-('e204f41fbdf9a96110ef3a6e806ba218', '127.0.0.1', 'Mozilla/5.0 (Windows NT 5.1; rv:18.0) Gecko/20100101 Firefox/18.0', 1360185019, '');
+('c0d38bb5a8802be57a139a855506ba64', '127.0.0.1', 'Mozilla/5.0 (Windows NT 5.1; rv:18.0) Gecko/20100101 Firefox/18.0', 1360253644, 'a:5:{s:9:"user_data";s:0:"";s:4:"name";s:10:"Aleksandar";s:5:"email";s:19:"alektrich@gmail.com";s:2:"id";s:1:"1";s:8:"loggedin";b:1;}');
 
 -- --------------------------------------------------------
 
@@ -58,7 +58,7 @@ CREATE TABLE IF NOT EXISTS `migrations` (
 --
 
 INSERT INTO `migrations` (`version`) VALUES
-(3);
+(4);
 
 -- --------------------------------------------------------
 
@@ -70,18 +70,19 @@ CREATE TABLE IF NOT EXISTS `pages` (
   `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
   `title` varchar(100) NOT NULL,
   `slug` varchar(100) NOT NULL,
-  `order` int(11) NOT NULL DEFAULT '1',
+  `order` int(11) unsigned NOT NULL DEFAULT '0',
   `body` text NOT NULL,
+  `parent_id` int(11) unsigned NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=3 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=4 ;
 
 --
 -- Dumping data for table `pages`
 --
 
-INSERT INTO `pages` (`id`, `title`, `slug`, `order`, `body`) VALUES
-(1, 'Home', 'home', 1, '<p>This is <strong>homepage.</strong></p>'),
-(2, 'O nama', 'about', 1, '<p>Na&scaron;a fima se bavi uvozom i distribucijom cincilatora i vimbrona za gemanzovanje.</p>');
+INSERT INTO `pages` (`id`, `title`, `slug`, `order`, `body`, `parent_id`) VALUES
+(1, 'Home', 'home', 1, '<p>This is <strong>homepage.</strong></p>', 0),
+(3, 'Kontakt', 'kontakt', 0, '<p>Contact us for more information - 011/4223-322</p>', 0);
 
 -- --------------------------------------------------------
 
