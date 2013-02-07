@@ -10,7 +10,7 @@ class Admin_Controller extends MY_Controller {
 		$this->load->model('user_m');
 
 		// Login check
-		/*$exception_uris = array(
+		$exception_uris = array(
 			'admin/user/login', 
 			'admin/user/logout'
 		);
@@ -18,6 +18,6 @@ class Admin_Controller extends MY_Controller {
 			if ($this->user_m->loggedin() == FALSE) {
 				redirect('admin/user/login');
 			}
-		}*/
+		}
 	}
 }
