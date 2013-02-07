@@ -1,9 +1,17 @@
 <!DOCTYPE html>
 <html>
 <head>
+	<meta charset='UTF-8'/>
 	<title><?php echo $meta_title; ?></title>
 	<link rel="stylesheet" type="text/css" href="<?php echo site_url('css/bootstrap.min.css');?>">
 	<script type="text/javascript" src="<?php echo site_url('js/tiny_mce/tiny_mce.js');?>"></script>
+	<script src="http://code.jquery.com/jquery-latest.js"></script>
+	<script src="<?php echo site_url('js/bootstrap.min.js'); ?>"></script>
+	<?php if(isset($sortable) && $sortable === TRUE): ?>
+	<script src="<?php echo site_url('js/jquery-ui-1.10.0.custom.min.js'); ?>"></script>
+	<script src="<?php echo site_url('js/jquery.mjs.nestedSortable.js'); ?>"></script>
+	<?php endif; ?>
+	<meta http-equiv='X-UA-Compatible' content='IE=edge'/>
 	<script type="text/javascript">
 	tinyMCE.init({
 		// General options

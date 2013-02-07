@@ -5,8 +5,9 @@
     		<a class="brand" href="<?php echo site_url('admin/dashboard'); ?>"><?php echo $meta_title; ?></a>
     		<ul class="nav">
     			<li class="active"><a href="<?php echo site_url('admin/dashboard'); ?>">Dashboard</a></li>
-    			<li><a href="<?php echo site_url('admin/page'); ?>">Pages</a></li>
-    			<li><a href="<?php echo site_url('admin/user'); ?>">Users</a></li>
+    			<li><?php echo anchor('admin/page', 'Pages');?></li>
+                <li><?php echo anchor('admin/page/order', 'Order pages');?></li>
+    			<li><?php echo anchor('admin/user', 'Users');?></li>
     		</ul>
     	</div>
     </div>
