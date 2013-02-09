@@ -8,11 +8,10 @@ class Page extends Frontend_Controller {
 	}
 
 	public function index() {
-		$pages = $this->page_m->get_by(array('slug' => 'about'));
-		var_dump($pages);
+		$this->load->view('_main_layout', $this->data);
 	}
 
-	public function save() {
+	/*public function save() {
 		$data = array(
 			'order' => '3',
 		);
@@ -22,5 +21,5 @@ class Page extends Frontend_Controller {
 
 	public function delete() {
 		$this->page_m->delete(3);
-	}
+	}*/
 }
