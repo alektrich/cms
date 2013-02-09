@@ -8,6 +8,7 @@
     			<li><?php echo anchor('admin/page', 'Pages');?></li>
                 <li><?php echo anchor('admin/page/order', 'Order pages');?></li>
     			<li><?php echo anchor('admin/user', 'Users');?></li>
+                <li><?php echo anchor('admin/article', 'News articles');?></li>
     		</ul>
     	</div>
     </div>
