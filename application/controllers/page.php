@@ -30,12 +30,37 @@ class Page extends Frontend_Controller {
 
 	private function _homepage() {
 		$this->load->model('article_m');
+		$this->db->where('pubdate <=', date('Y-m-d'));
 		$this->db->limit(6);
 		$this->data['articles'] = $this->article_m->get();
 	}
 
 	private function _news_archive() {
-		dump('Welcome from the page template');
+		$this->load->model('article_m');
+		$this->db->where('pubdate <=', date('Y-m-d'));
+		$count = $this->db->count_all_results('articles');
+
+		$perpage = 4;
+
+		if($count > $perpage) {
+			$this->load->library('pagination');
+
+			$config['base_url'] = site_url($this->uri->segment(1) . '/');
+			$config['total_rows'] = $count;
+			$config['per_page'] = $perpage;
+			$config['uri_segment'] = 2;
+			
+			$this->pagination->initialize($config);
+
+			$this->data['pagination'] = $this->pagination->create_links();
+			$offset = $this->uri->segment(2);
+		} else {
+			$this->data['pagination'] = '';
+			$offset = 0;
+		}
+		$this->db->where('pubdate <=', date('Y-m-d'));
+		$this->db->limit($perpage, $offset);
+		$this->data['articles'] = $this->article_m->get();
 	}
 	
 }

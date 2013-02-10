@@ -35,4 +35,8 @@ class Article_m extends MY_Model {
 		$article->pubdate = date('Y-m-d');
 		return $article;
 	}
+
+	public function get_recent($limit) {
+		$limit = (int) $limit;
+	}
 }

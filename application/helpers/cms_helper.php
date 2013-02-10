@@ -16,8 +16,13 @@ function article_links($articles) {
     $string = '<ul>';
     foreach ($articles as $article) {
         $url = article_link($article);
+        $string .= '<li>';
+        $string .= '<h3>' . anchor($url, e($article->title)) . '></h3>';
+        $string .= '<p class="pubdate">' . e($article->pubdate) . '</p>';
+        $string .= '</li>'; 
     }
     $string .= '</ul>';
+    return $string; 
 }
 
 function get_excerpt($article, $numwords = 50) {

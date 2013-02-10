@@ -23,3 +23,5 @@ ERROR - 2013-02-10 19:03:08 --> Could not load template _in file C:\xampp\htdocs
 ERROR - 2013-02-10 19:04:04 --> 404 Page Not Found --> http://localhost/cms/
 ERROR - 2013-02-10 19:04:09 --> 404 Page Not Found --> http://localhost/cms/page
 ERROR - 2013-02-10 19:04:32 --> 404 Page Not Found --> http://localhost/cms/
+ERROR - 2013-02-10 19:23:41 --> 404 Page Not Found --> http://localhost/cms/admin/page/edit
+ERROR - 2013-02-10 19:23:46 --> 404 Page Not Found --> http://localhost/cms/admin/page
