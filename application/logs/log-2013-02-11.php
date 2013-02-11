@@ -1,0 +1,20 @@
+<?php  if ( ! defined('BASEPATH')) exit('No direct script access allowed'); ?>
+
+ERROR - 2013-02-11 22:37:05 --> 404 Page Not Found --> http://localhost/cms/img/cms.jpg
+ERROR - 2013-02-11 22:37:59 --> 404 Page Not Found --> http://localhost/cms/img/cms.jpg
+ERROR - 2013-02-11 22:38:10 --> 404 Page Not Found --> http://localhost/cms/img/cms.jpg
+ERROR - 2013-02-11 22:38:18 --> 404 Page Not Found --> http://localhost/cms/img/cms.jpg
+ERROR - 2013-02-11 22:38:21 --> 404 Page Not Found --> http://localhost/cms/img/cms.jpg
+ERROR - 2013-02-11 22:38:23 --> 404 Page Not Found --> http://localhost/cms/img/cms.jpg
+ERROR - 2013-02-11 22:38:26 --> 404 Page Not Found --> http://localhost/cms/img/cms.jpg
+ERROR - 2013-02-11 22:38:58 --> 404 Page Not Found --> http://localhost/cms/img/cms.jpg
+ERROR - 2013-02-11 22:39:07 --> 404 Page Not Found --> http://localhost/cms/img/cms.jpg
+ERROR - 2013-02-11 22:39:09 --> 404 Page Not Found --> http://localhost/cms/img/cms.jpg
+ERROR - 2013-02-11 22:39:09 --> 404 Page Not Found --> http://localhost/cms/img/cms.jpg
+ERROR - 2013-02-11 22:39:10 --> 404 Page Not Found --> http://localhost/cms/img/cms.jpg
+ERROR - 2013-02-11 22:39:14 --> 404 Page Not Found --> http://localhost/cms/img/cms.jpg
+ERROR - 2013-02-11 22:39:17 --> 404 Page Not Found --> http://localhost/cms/img/cms.jpg
+ERROR - 2013-02-11 22:39:36 --> 404 Page Not Found --> http://localhost/cms/img/cms.jpg
+ERROR - 2013-02-11 22:39:40 --> 404 Page Not Found --> http://localhost/cms/img/cms.jpg
+ERROR - 2013-02-11 22:39:44 --> 404 Page Not Found --> http://localhost/cms/img/cms.jpg
+ERROR - 2013-02-11 22:39:50 --> 404 Page Not Found --> http://localhost/cms/img/cms.jpg

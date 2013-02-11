@@ -12,6 +12,8 @@ class Page extends Frontend_Controller {
 		$this->data['page'] = $this->page_m->get_by(array('slug' => (string) $this->uri->segment(1)), TRUE);
 		count($this->data['page']) || show_404(current_url());
 
+		//add_meta_title($this->data['page']->title);
+
 		$method = '_' . $this->data['page']->template;
 		if(method_exists($this, $method)) {
 			$this->$method();
@@ -25,19 +27,20 @@ class Page extends Frontend_Controller {
 	}
 
 	private function _page() {
-		dump('Welcome from the page template');
+		$this->data['recent_news'] = $this->article_m->get_recent();
+		
 	}
 
 	private function _homepage() {
-		$this->load->model('article_m');
-		$this->db->where('pubdate <=', date('Y-m-d'));
+		$this->article_m->set_published();
 		$this->db->limit(6);
 		$this->data['articles'] = $this->article_m->get();
 	}
 
 	private function _news_archive() {
-		$this->load->model('article_m');
-		$this->db->where('pubdate <=', date('Y-m-d'));
+		$this->data['recent_news'] = $this->article_m->get_recent();
+
+		$this->article_m->set_published();
 		$count = $this->db->count_all_results('articles');
 
 		$perpage = 4;
@@ -58,7 +61,7 @@ class Page extends Frontend_Controller {
 			$this->data['pagination'] = '';
 			$offset = 0;
 		}
-		$this->db->where('pubdate <=', date('Y-m-d'));
+		$this->article_m->set_published();
 		$this->db->limit($perpage, $offset);
 		$this->data['articles'] = $this->article_m->get();
 	}

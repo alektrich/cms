@@ -4,7 +4,7 @@ class Article extends Frontend_Controller {
 
 	public function __construct() {
 		parent::__construct();
-		$this->load->model('article_m');
+		$this->data['recent_news'] = $this->article_m->get_recent();
 	}
 
 	public function index($id, $slug) {
@@ -20,6 +20,7 @@ class Article extends Frontend_Controller {
 			redirect('article/' . $this->data['article']->id . '/' . $this->data['article']->slug, 'location', '301');
 		}
 
+		add_meta_title($this->data['article']->title);
 		$this->data['subview'] = 'article';
 		$this->load->view('_main_layout', $this->data);
 	}
